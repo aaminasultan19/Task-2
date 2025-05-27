@@ -34,7 +34,7 @@ This phishing email impersonates **Lido Finance**, claiming to offer an ETH aird
 
 ###  Screenshot
 
-![Fake Lido ETH Airdrop Email](screenshots/lido_airdrop_email.png)
+![Fake Lido ETH Airdrop Email](screenshots/phishing_sample_outlook.png)
 
 > Screenshot of the phishing email received in Outlook.
 
