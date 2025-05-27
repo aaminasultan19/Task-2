@@ -1,51 +1,70 @@
-# Phishing Indicators Report
+# Phishing Email Analysis: Fake Lido Finance Airdrop
 
-This document contains analysis of phishing email samples, including extracted indicators, tactics used, and visual evidence to help identify malicious behavior.
+## Email Summary
+This email pretends to be from **Lido Finance** offering a fake cryptocurrency airdrop to steal user credentials.
 
----
+| Detail | Value |
+|--------|-------|
+| **From** | `Airdrop@Lido-fi <AirdropLido-fi@oflrxiet.onmicrosoft.com>` |
+| **To** | `rodrigofp` |
+| **Subject** | `#rodrigofp: Lido V2 Staking Airdrop` |
+| **Date** | `August 15, 2023, 12:30 PM` |
 
-##  Sample: Fake Lido ETH Airdrop Email
-
-### Email Summary
-
-This phishing email impersonates **Lido Finance**, claiming to offer an ETH airdrop. It uses urgency, impersonation, and poor formatting to trick users into clicking a potentially malicious link.
-
-| Detail        | Value |
-|---------------|-------|
-| **From**      | `Airdrop@Lido-fi-AirdropLido-fi@ofrixiet.onmicrosoft.com` |
-| **To**        | `rodrigofp` |
-| **Subject**   | `ETH Airdrop is now Live!` |
-| **Date**      | `Tue, August 15, 2023, 12:30 PM` |
+**Verdict: PHISHING EMAIL** ⚠
 
 ---
 
-###  Phishing Indicators
+## Why This is Phishing
 
-| Indicator | Description |
-|----------|-------------|
-| **Suspicious Sender Address** | Uses an unofficial domain (`ofrixiet.onmicrosoft.com`) that mimics Lido's name. |
-| **Urgency/Scarcity** | Phrases like “limited supply” and “first come, first served” push the user to act without verifying. |
-| **Poor Grammar and Typos** | Examples include: “hasben” instead of “has been”, “cla im”, and "youfor". |
-| **Lack of Personalization** | Generic greeting — no user-specific data used. |
-| **Deceptive Button** | The “Join Airdrop” button has no visible link in the message. Link destination is suspicious or hidden. |
-| **Brand Impersonation** | Mentions “Lido Finance” but lacks official branding or security measures (e.g., DKIM, SPF). |
+### Content Red Flags
+- **Fake Identity**: Claims to be "Lido Finance" but uses a Microsoft email domain
+- **Creates Urgency**: "Airdrop will end on August 18" to pressure quick action  
+- **Too Good to be True**: Promises free "10,000 ETH tokens"
+- **Suspicious Button**: "Join Airdrop" button leads to malicious website
+- **Poor Grammar**: Contains spelling errors and awkward phrasing
+
+### Technical Problems (Header Analysis)
+
+| Security Check | Result | What This Means |
+|----------------|--------|-----------------|
+| **DMARC** | ❌ Failed | No protection against fake emails |
+| **DKIM** | ❌ Failed | Email can't be verified as authentic |
+| **SPF** | ✅ Passed | Email came from Microsoft servers (but that doesn't make it safe) |
+| **Domain** | ❌ Suspicious | Uses `oflrxiet.onmicrosoft.com` instead of official Lido domain |
+
+### Email Route
+The email traveled through Microsoft's servers but originated from a fake domain trying to impersonate Lido Finance.
+
+---
+
+## Screenshots
+![Phishing Email Sample](screenshots/phishing_sample_outlook.png)
+*The fake Lido airdrop email received in Outlook*
+
+![Header Analysis](screenshots/header_analysis.png)  
+*MXToolbox analysis showing authentication failures*
 
 ---
 
-###  Screenshot
+## How to Stay Safe
 
-![Fake Lido ETH Airdrop Email](screenshots/phishing_sample_outlook.png)
+### Don't:
+- Click the "Join Airdrop" button or any links
+- Enter your wallet information on suspicious websites
+- Trust emails about free cryptocurrency without verification
 
-> Screenshot of the phishing email received in Outlook.
-
----
-
-###  Recommendations
-
-- **Do not click** any buttons or links in unsolicited emails about crypto or airdrops.
-- **Verify** claims through official websites or accounts (e.g., [https://lido.fi](https://lido.fi)).
-- **Report** suspicious emails to your provider as phishing.
-- **Educate users** on tactics such as spoofed domains, urgency tricks, and fake airdrops.
+### Do:
+- Check official Lido website (lido.fi) for real announcements
+- Verify sender's actual email domain (not just the display name)
+- Report this email as phishing to your email provider
+- Delete the email immediately
 
 ---
+
+## Key Takeaways
+
+1. **Real companies don't email random airdrops** - Legitimate projects announce through official channels
+2. **Check the actual email address** - This uses Microsoft's domain, not Lido's official domain
+3. **Security checks failed** - No DMARC or DKIM protection means it's likely fake
+4. **When in doubt, don't click** - Always verify through official websites first
 
