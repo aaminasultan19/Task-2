@@ -41,7 +41,7 @@ The email traveled through Microsoft's servers but originated from a fake domain
 ![Phishing Email Sample](screenshots/phishing_sample_outlook.png)
 *The fake Lido airdrop email received in Outlook*
 
-![Header Analysis](screenshots/header_analysis.png)  
+![Header Analysis](screenshots/Header_analysis_result.png)  
 *MXToolbox analysis showing authentication failures*
 
 ---
