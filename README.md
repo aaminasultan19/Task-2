@@ -37,8 +37,5 @@ Analyze a sample phishing email and identify red flags such as:
 ##  Learnings
 This exercise improved my skills in spotting phishing techniques by dissecting real-world malicious emails. It also taught me how to use email header analysis tools effectively.
 
----
 
-## 🚀 How to Run
-No code to run here—just open the `.md` and `.txt` files for detailed analysis.
 
